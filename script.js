@@ -99,8 +99,15 @@ function getWeatherData(city, unit, hourlyorWeek) {
             currentLocation.innerText = data.resolvedAddress;
             condition.innerText = today.conditions;
             rain.innerText = "Perc - " + today.precip + "%";
+            if ('uvindex' in today) {
             uvIndex.innerText = today.uvindex;
             measureUvIndex(today.uvindex);
+            } else {
+             // Handle case where UV index data is not available
+            uvIndex.innerText = "N/A";
+            uvText.innerText = "N/A";
+            }
+
             windSpeed.innerText = today.windspeed;
             sunRise.innerText = convertTimeTo12HourFormat(today.sunrise);
             sunSet.innerText = convertTimeTo12HourFormat(today.sunset);
