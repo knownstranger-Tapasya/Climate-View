@@ -98,7 +98,7 @@ function getWeatherData(city, unit, hourlyorWeek) {
             }
             currentLocation.innerText = data.resolvedAddress;
             condition.innerText = today.conditions;
-            rain.innerText = "Perc - " + today.precip + "%";
+            rain.innerText = today.precip != null ? "Perc - " + today.precip + "%" : "Perc - N/A";
             if ('uvindex' in today) {
             uvIndex.innerText = today.uvindex;
             measureUvIndex(today.uvindex);
