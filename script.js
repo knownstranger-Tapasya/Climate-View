@@ -546,3 +546,10 @@ function removeActive(x) {
         element.classList.remove("active");
     }
 }
+window.addEventListener('load', () => {
+    // Set default city to Kolkata
+    currentCity = "Kolkata";
+
+    // Fetch weather data for Kolkata when the page loads
+    getWeatherData(currentCity, currentUnit, hourlyorWeek);
+});
